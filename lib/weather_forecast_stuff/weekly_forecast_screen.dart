@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'data_source.dart';
-import 'models.dart';
+import '../data_source.dart';
+import '../models/models.dart';
 import 'weekly_forecast_list.dart';
 import 'weather_sliver_app_bar.dart';
 

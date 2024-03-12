@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_icons/weather_icons.dart';
 
-import 'models.dart';
+import '../models/models.dart';
 
 class WeeklyForecastList extends StatelessWidget {
   final WeeklyForecastDto weeklyForecast;
