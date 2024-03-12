@@ -28,14 +28,14 @@ class FakeDataSource implements DataSource {
 class RealDataSource implements DataSource {
   @override
   Future<WeatherChartData> getChartData() async {
-    const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin";
+    const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin";
     final response = await http.get(Uri.parse(apiUrl));
     return WeatherChartData.fromJson(jsonDecode(response.body));
   }
   @override
   Future<WeeklyForecastDto> getWeeklyForecast() async {
     const url =
-        "https://api.open-meteo.com/v1/forecast?latitude=55.4703&longitude=8.4519&daily=weather_code,temperature_2m_max,temperature_2m_min&wind_speed_unit=ms&timezone=Europe%2FBerlin";
+        "https://api.open-meteo.com/v1/forecast?latitude=55.4703&longitude=8.4519&daily=temperature_2m_max,temperature_2m_min&wind_speed_unit=ms&timezone=Europe%2FBerlin";
     final response = await http.get(Uri.parse(url));
     final json = response.body;
     return WeeklyForecastDto.fromJson(jsonDecode(json));
